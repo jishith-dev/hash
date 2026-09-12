@@ -1,0 +1,45 @@
+import (Hash) from "lib.zen"
+
+Hash hash
+
+screen("-- SHA-256 --")
+
+string sha256Empty = hash.sha256("")
+screen(sha256Empty)
+screen(sha256Empty == "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855")
+
+string sha256Hello = hash.sha256("hello")
+screen(sha256Hello)
+screen(sha256Hello == "2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824")
+
+screen("-- SHA-512 --")
+
+string sha512Empty = hash.sha512("")
+screen(sha512Empty)
+screen(sha512Empty == "cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e")
+
+string sha512Hello = hash.sha512("hello")
+screen(sha512Hello)
+screen(sha512Hello == "9b71d224bd62f3785d96d46ad3ea3d73319bfbc2890caadae2dff72519673ca72323c3d99ba5c11d7c7acc6e14b8c5da0c4663475c2e5c3adef46f73bcdec043")
+
+screen("-- HMAC-SHA256 --")
+
+string hmac256 = hash.hmacSha256(
+    "The quick brown fox jumps over the lazy dog",
+    "key"
+)
+
+screen(hmac256)
+screen(hmac256 == "f7bc83f430538424b13298e6aa6fb143ef4d59a14946175997479dbc2d1a3cd8")
+
+screen("-- HMAC-SHA512 --")
+
+string hmac512 = hash.hmacSha512(
+    "The quick brown fox jumps over the lazy dog",
+    "key"
+)
+
+screen(hmac512)
+screen(hmac512 == "b42af09057bac1e2d41708e48a902e09b5ff7f12ab428a4fe86653c73dd248fb82f948a549f7b791a5b41915ee4d1ec3935357e4e2317250d0372afa2ebeeb3a")
+
+screen("-- Completed --")

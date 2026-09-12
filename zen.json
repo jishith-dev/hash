@@ -1,0 +1,9 @@
+{
+  "name": "hash",
+  "version": "1.0.0",
+  "author": "Jishith-dev",
+  "repo": "https://github.com/Jishith-dev/hash",
+  "description": "SHA-256, SHA-512, and HMAC hashing utilities for Zen.",
+  "bin": "lib.zen",
+  "dependencies": {}
+}

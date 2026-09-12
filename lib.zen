@@ -1,0 +1,46 @@
+struct Hash {
+
+    sha256(string data) string {
+        List<byte> digest = crypto.sha256(data)
+        return this.toHex(digest)
+    }
+
+    sha512(string data) string {
+        List<byte> digest = crypto.sha512(data)
+        return this.toHex(digest)
+    }
+
+    hmacSha256(string data, string key) string {
+    List<byte> digest = crypto.hmacSha256(key, data)
+    return this.toHex(digest)
+}
+
+hmacSha512(string data, string key) string {
+    List<byte> digest = crypto.hmacSha512(key, data)
+    return this.toHex(digest)
+}
+
+    toHex(List<byte> bytes) string {
+        string digits = "0123456789abcdef"
+        string result = ""
+
+        int i = 0
+
+        while (i < bytes.length) {
+            int value = Int(bytes[i])
+
+            int high = (value >> 4) & 15
+            int low = value & 15
+
+            result = result + digits[high] + digits[low]
+
+            i = i + 1
+        }
+
+        return result
+    }
+}
+
+export (
+    Hash
+)
