@@ -1,5 +1,8 @@
 # hash
 
+Author: Jishith M P
+Version: v1.0.1
+
 A lightweight hashing library for Zen.
 
 Provides SHA-256, SHA-512, HMAC-SHA256, and HMAC-SHA512 hashing with hexadecimal string output.
@@ -13,7 +16,7 @@ zen install hash
 ## Usage
 
 ```zen
-import (Hash) from "lib.zen"
+import (Hash) from "hash"
 
 Hash hash
 ```
@@ -102,7 +105,7 @@ hmacSha512(message, key)
 ## Example
 
 ```zen
-import (Hash) from "lib.zen"
+import (Hash) from "hash"
 
 Hash hash
 

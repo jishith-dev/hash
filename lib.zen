@@ -11,16 +11,16 @@ struct Hash {
     }
 
     hmacSha256(string data, string key) string {
-    List<byte> digest = crypto.hmacSha256(key, data)
-    return this.toHex(digest)
-}
+      List<byte> digest = crypto.hmacSha256(key, data)
+      return this.toHex(digest)
+    }
 
-hmacSha512(string data, string key) string {
-    List<byte> digest = crypto.hmacSha512(key, data)
-    return this.toHex(digest)
-}
+   hmacSha512(string data, string key) string {
+      List<byte> digest = crypto.hmacSha512(key, data)
+      return this.toHex(digest)
+   }
 
-    toHex(List<byte> bytes) string {
+   private toHex(List<byte> bytes) string {
         string digits = "0123456789abcdef"
         string result = ""
 
@@ -41,6 +41,4 @@ hmacSha512(string data, string key) string {
     }
 }
 
-export (
-    Hash
-)
+export (Hash)
